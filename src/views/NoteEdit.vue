@@ -84,7 +84,7 @@ export default {
         ]),
         async saveNote() {
             const config = { headers: {'Content-Type': 'application/json'} };
-            await axios.put('http://localhost:3000/notes/' + this.$route.params.id, {
+            await axios.put('https://my-json-server.typicode.com/EvgenyGuguev/vue-todo/notes/' + this.$route.params.id, {
                 title: this.$refs['title'].value,
                 todos: this.note.todos
             }, config);
@@ -92,7 +92,7 @@ export default {
         },
         async deleteNote() {
             if (confirm('Действительно далить заметку?')) {
-                await axios.delete('http://localhost:3000/notes/' + this.note.id)
+                await axios.delete('https://my-json-server.typicode.com/EvgenyGuguev/vue-todo/notes/' + this.note.id)
                     .then(() => {
                         let index = this.notes.indexOf(this.note);
                         this.notes.splice(index, 1)

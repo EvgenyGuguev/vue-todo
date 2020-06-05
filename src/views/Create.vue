@@ -43,12 +43,11 @@
         },
         methods: {
             async addNote() {
-                const res = await axios.post('http://localhost:3000/notes', {
+                const res = await axios.post('https://my-json-server.typicode.com/EvgenyGuguev/vue-todo/notes', {
                     title: this.newNote.title,
                     todos: this.newNote.todos
                 });
 
-                // this.notes = [...this.notes, res.data];
                 this.notes.push(res.data);
                 this.newNote.title = '';
                 await this.$router.push('/');

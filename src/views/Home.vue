@@ -45,7 +45,7 @@ export default {
     ]),
     async deleteNote(index, id) {
       if (confirm('Действительно далить заметку?')) {
-        await axios.delete('http://localhost:3000/notes/' + id)
+        await axios.delete('https://my-json-server.typicode.com/EvgenyGuguev/vue-todo/notes/' + id)
           .then(() => {
             this.notes.splice(index, 1)
           });
