@@ -19,7 +19,7 @@ export default new Vuex.Store({
     },
     actions: {
         getNotesFromApi({ commit }) {
-            return axios.get('https://my-json-server.typicode.com/EvgenyGuguev/vue-todo/notes')
+            return axios.get('http://localhost:3000/notes')
                 .then(notes => {
                     commit('SET_NOTES_TO_STATE', notes.data);
                     return notes.data;
@@ -29,7 +29,7 @@ export default new Vuex.Store({
                 });
         },
         getNoteFromApi({ commit }, id) {
-            return axios.get('https://my-json-server.typicode.com/EvgenyGuguev/vue-todo/notes/' + id)
+            return axios.get('http://localhost:3000/notes/' + id)
                 .then(note => {
                     commit('SET_NOTE', note.data);
                     return note.data;
